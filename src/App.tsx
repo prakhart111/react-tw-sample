@@ -46,6 +46,7 @@ const AppContent = () => {
 
   return (
     <div className="flex h-screen bg-background">
+      <img src={Alpha} />
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Navbar />
