@@ -10,6 +10,7 @@ import {
   Search,
   MoreVertical,
 } from "lucide-react";
+import Alpha from './alpha-square.png'
 
 interface Campaign {
   id: number;
