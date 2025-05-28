@@ -1,18 +1,32 @@
 import React from "react";
 import { Button } from "./button";
+import { Bell, UserCircle, Settings } from "lucide-react"; // Added Settings as an example
 
 const Navbar = () => {
   return (
-    <header className="h-16 border-b bg-card text-card-foreground px-6 flex items-center justify-between">
-      <div className="flex items-center space-x-4">
-        <span className="text-xl font-semibold">Dashboard</span>
+    <header className="h-16 border-b bg-card text-card-foreground px-4 md:px-6 flex items-center justify-between shrink-0">
+      {/* Left side - can be used for breadcrumbs or global search trigger */}
+      <div>
+        {/* <Button variant="ghost" size="icon" className="md:hidden">
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle Menu</span>
+        </Button> */}
       </div>
-      <div className="flex items-center space-x-4">
-        <button className="p-2 hover:bg-muted rounded-full">🔍</button>
-        <button className="p-2 hover:bg-muted rounded-full">🔔</button>
-        <Button asChild>
-          <span className="mr-2">👤</span>
-          Profile
+
+      {/* Right side - actions */}
+      <div className="flex items-center gap-3 md:gap-4">
+        <Button variant="ghost" size="icon" className="rounded-full">
+          <Bell className="h-5 w-5" />
+          <span className="sr-only">Notifications</span>
+        </Button>
+        <Button variant="ghost" size="icon" className="rounded-full">
+          <Settings className="h-5 w-5" />
+          <span className="sr-only">Settings</span>
+        </Button>
+        <Button variant="ghost" className="flex items-center gap-2 px-3 rounded-full">
+          <UserCircle className="h-6 w-6" />
+          <span className="hidden sm:inline">Profile</span>
+          <span className="sr-only">User Profile</span>
         </Button>
       </div>
     </header>
