@@ -1,20 +1,19 @@
 import React from "react";
 import { Button } from "./button";
-import { Bell, UserCircle, Settings } from "lucide-react"; // Added Settings as an example
+import { Bell, UserCircle, Settings } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle"; // Import ThemeToggle
 
 const Navbar = () => {
   return (
     <header className="h-16 border-b bg-card text-card-foreground px-4 md:px-6 flex items-center justify-between shrink-0">
       {/* Left side - can be used for breadcrumbs or global search trigger */}
       <div>
-        {/* <Button variant="ghost" size="icon" className="md:hidden">
-          <Menu className="h-5 w-5" />
-          <span className="sr-only">Toggle Menu</span>
-        </Button> */}
+        {/* Example: <span className="font-semibold">Dashboard</span> */}
       </div>
 
       {/* Right side - actions */}
-      <div className="flex items-center gap-3 md:gap-4">
+      <div className="flex items-center gap-2 md:gap-3">
+        <ThemeToggle /> {/* Add ThemeToggle button */}
         <Button variant="ghost" size="icon" className="rounded-full">
           <Bell className="h-5 w-5" />
           <span className="sr-only">Notifications</span>
