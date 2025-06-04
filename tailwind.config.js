@@ -5,7 +5,7 @@ module.exports = {
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}", // This already covers src/pages
   ],
   prefix: "",
   theme: {
@@ -73,4 +73,5 @@ module.exports = {
       },
     },
   },
+  plugins: [require("tailwindcss-animate")], // Make sure this plugin is present
 };
