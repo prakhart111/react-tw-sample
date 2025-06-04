@@ -1,16 +1,25 @@
 import React from "react";
 import { Button } from "./button";
-import { Bell, UserCircle, Settings } from "lucide-react"; // Added Settings as an example
+import { Bell, UserCircle, Settings, Menu } from "lucide-react";
 
-const Navbar = () => {
+interface NavbarProps {
+  onMenuToggle: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
   return (
     <header className="h-16 border-b bg-card text-card-foreground px-4 md:px-6 flex items-center justify-between shrink-0">
-      {/* Left side - can be used for breadcrumbs or global search trigger */}
+      {/* Left side - hamburger menu for mobile */}
       <div>
-        {/* <Button variant="ghost" size="icon" className="md:hidden">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
+          onClick={onMenuToggle}
+        >
           <Menu className="h-5 w-5" />
           <span className="sr-only">Toggle Menu</span>
-        </Button> */}
+        </Button>
       </div>
 
       {/* Right side - actions */}

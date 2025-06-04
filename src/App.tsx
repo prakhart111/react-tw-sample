@@ -59,6 +59,8 @@ const AppContent = () => {
     },
   ]);
 
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+
   const getStatusColor = (status: Campaign["status"]) => {
     switch (status) {
       case "Active":
@@ -75,9 +77,18 @@ const AppContent = () => {
 
   return (
     <div className="flex h-screen bg-background text-foreground">
-      <Sidebar />
+      <Sidebar
+        isMobileOpen={isMobileSidebarOpen}
+        setMobileOpen={setIsMobileSidebarOpen}
+      />
+      {isMobileSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={() => setIsMobileSidebarOpen(false)}
+        ></div>
+      )}
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Navbar />
+        <Navbar onMenuToggle={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)} />
         <main className="flex-1 p-4 md:p-6 overflow-y-auto">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
             <div>
